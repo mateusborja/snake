@@ -52,6 +52,7 @@ public class GameWindow extends JFrame {
 	public void paint(Graphics g) {
 		background.paint(g);
 		rect.paint(g);
+		rect10.paint(g);
 	
 
 		
