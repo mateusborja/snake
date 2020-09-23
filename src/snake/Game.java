@@ -23,10 +23,10 @@ public class Game {
 		do {
 			gameWindow.repaint();
 			
-			try {
-				Thread.sleep(30);
-			} catch(InterruptedException e) {
-			}
+//			try {
+//				Thread.sleep(30);
+//			} catch(InterruptedException e) {
+//			}
 			
 		} while (!isGameOver());
 	}

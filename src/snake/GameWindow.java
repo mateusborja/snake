@@ -18,10 +18,6 @@ public class GameWindow extends JFrame {
 
 		setSize(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
 		setResizable(false);		
-		
-		setTitle(Constants.WINDOW_TITLE);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
