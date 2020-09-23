@@ -6,6 +6,9 @@ public class Application {
 		
 		new GameWindow();
 		
+		Game g = new Game();
+		g.start();
+		
 
 	}
 	
