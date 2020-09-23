@@ -8,6 +8,7 @@ public class Snake extends Shape {
 	private Direction direction;
 
 	public Snake() {
+		
 		super(Constants.SNAKE_COLOR);
 		
 		Point location = new Point(Constants.SNAKE_START_X, Constants.SNAKE_START_Y);

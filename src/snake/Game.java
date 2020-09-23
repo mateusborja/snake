@@ -1,4 +1,4 @@
-+package snake;
+package snake;
 
 public class Game {
 	private GameWindow gameWindow;
@@ -14,7 +14,7 @@ public class Game {
 		run();
 	}
 	
-	private void addElementsToScreen() {
+		private void addElementsToScreen() {
 		renderer.add(new Background());
 		renderer.add(snake);
 	}
@@ -23,10 +23,10 @@ public class Game {
 		do {
 			gameWindow.repaint();
 			
-//			try {
-//				Thread.sleep(30);
-//			} catch(InterruptedException e) {
-//			}
+			try {
+				Thread.sleep(30);
+			} catch(InterruptedException e) {
+			}
 			
 		} while (!isGameOver());
 	}
