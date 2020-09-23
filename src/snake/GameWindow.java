@@ -10,7 +10,6 @@ public class GameWindow extends JFrame {
 	
 	public GameWindow() {
 		renderer = new Renderer();
-		
 		Background background = new Background();
 		renderer.add(background);
 			
