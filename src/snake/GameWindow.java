@@ -26,11 +26,8 @@ public class GameWindow extends JFrame {
 		
 	}
 	
-	
 	@Override
-	public void paint(Graphics g) {
-		background.paint(g);
-		rect.paint(g);
+	public void draw(Graphics g) {
 		renderer.render(g);
 	}
 }
