@@ -3,6 +3,7 @@ package snake;
 import java.awt.Color;
 import java.awt.Graphics; 
 import javax.swing.JFrame;
+import javax.swing.Renderer;
 
 public class GameWindow extends JFrame { 
 	private Renderer renderer;
@@ -25,6 +26,8 @@ public class GameWindow extends JFrame {
 		return renderer;
 		
 	}
+
+
 	
 	@Override
 	public void draw(Graphics g) {
