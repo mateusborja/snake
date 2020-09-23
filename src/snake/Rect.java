@@ -2,53 +2,44 @@ package snake;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Dimension;
+import java.awt.Point;
 
-public class Rect {
-	private Color color;
-	private int x;
-	private int y;
-	private int width;
-	private int height;
+
+public class Rect extends Drawable {
+	private Point location;
+	private Dimension dimension;
+
 	
-					
 
-	public Rect(Color color, int x, int y, int width, int height) {
-		super();
-		this.color = color;
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
+	public Rect(Point lotacion, Dimension dimension) {
+		
+		this.location = location;
+		this.dimension = dimension;
+		
+	}
+	
+	public Rect(int x, int y, int width, int height) {
+		this.location = new Point(x, y);
+		this.dimension = new Dimension(width, height);
 	}
 
-
-	public int getX() {
-		return x;
+	public Point getLocation() {
+		return location;
+				
 	}
-
-
-	public int getY() {
-		return y; 
+	
+	public Dimension getDimension() {
+		return dimension;
 	}
+	
 
-
-
-	public int getWidth() {
-		return width;
-	}
-
-
-
-
-	public int getHeight() {
-		return height;
-	}
-
-
-
-	public void paint(Graphics g) {
-		g.setColor(color);
-		g.fillRect(x, y, width, height);
+	public void draw(Graphics g) {
+		g.fillRect(
+				(int) location.getX(),
+				(int) location.getY(),
+				(int) dimension.getWidth(),
+				(int) dimension.getHeight());
 	}
 		
 

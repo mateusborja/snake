@@ -1,5 +1,10 @@
 package snake;
 
-public class Direction {
+public enum Direction {
+	
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
 
 }
