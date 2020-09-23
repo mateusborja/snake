@@ -26,8 +26,6 @@ public class GameWindow extends JFrame {
 		
 	}
 
-
-	
 	@Override
 	public void draw(Graphics g) {
 		renderer.render(g);
