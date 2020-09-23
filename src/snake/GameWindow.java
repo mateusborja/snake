@@ -1,21 +1,23 @@
 package snake;
 
-import java.awt.Graphics; 
+import java.awt.Graphics;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 
 @SuppressWarnings("serial")
-public class GameWindow extends JFrame { 
+public class GameWindow extends JFrame implements KeyListener { 
 	private Renderer renderer;
 	
 	public GameWindow() {
 		renderer = new Renderer();
 		
-		Background background = new Background();
-		renderer.add(background);
-			
-		Snake snake = new Snake();
-		renderer.add(snake);
+//		problema de flicker resolvido
+//		Background background = new Background();
+//		renderer.add(background);
+//			
+//		Snake snake = new Snake();
+//		renderer.add(snake);
 
 		setSize(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
 		setResizable(false);
