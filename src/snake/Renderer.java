@@ -17,8 +17,8 @@ public class Renderer {
 		}
 	}
 	
-	public void add(Snake snake) {
-		drawables.add(snake);
+	public void add(Drawable d) {
+		drawables.add(d);
 	}
 	
 	public void remove(Drawable d) {
