@@ -15,10 +15,12 @@ public class Constants {
 	public static final int SNAKE_START_Y = 120;
 	public static final int SNAKE_PIECE_SIZE = 5;
 	
-	
-
 	public static final int SNAKE_INITIAL_SIZE = 20;
-	
-	public static final int SNAKE_SIZE_1 = 20;
+	public static final int SNAKE_SIZE_1 = 30;
 
+	public static final Color FOOD_COLOR = Color.GREEN;
+	public static final int FOOD_SIZE = 10;
+	
+	public static final int FOOD_START_X = 250;
+	public static final int FOOD_START_Y = 250;
 }

@@ -5,9 +5,12 @@ public class Game implements Runnable {
     private GameWindow gameWindow;
     private Renderer renderer;
     private Snake snake;
+    private Food food;
 
+    
     public void start() {
         snake = new Snake();
+        food = new Food();
         gameWindow = new GameWindow(snake);
         renderer = gameWindow.getRenderer();
 
@@ -19,6 +22,7 @@ public class Game implements Runnable {
     private void addElementsToScreen() {
         renderer.add(new Background());
         renderer.add(snake);
+        renderer.add(food);
     }
 
     @Override
