@@ -2,6 +2,7 @@ package snake;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
@@ -13,6 +14,8 @@ import javax.swing.JFrame;
 	private Snake snake;
 	private Image buffer;
 	private Graphics gImage;
+	private Rectangle drawingArea;
+	private long lastkeyboardEventTime;
 	
 	
 	public GameWindow(Snake snake) {
@@ -31,7 +34,9 @@ import javax.swing.JFrame;
 		gImage = buffer.getGraphics();
 		renderer = new Renderer(gImage);
 		
+		defineDrawingArea();
 	}
+	
 
 	public Renderer getRenderer() {
 		return renderer;
@@ -59,9 +64,29 @@ import javax.swing.JFrame;
 	public void keyReleased(KeyEvent e) {
 			
 	}
+	
+	private void defineDrawingArea() {
+		int upperY = (int) (Constants.WINDOW_HEIGHT - getContentPane().getSize().getHeight());
+		drawingArea = new Rectangle(0, upperY, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT - upperY);
+	}
+	
+	public Rectangle getDrawingArea() {
+		return drawingArea;
+	}
+	
+	
 		
 	@Override
 	public void keyPressed(KeyEvent e) {
+		long now = System.currentTimeMillis();
+		
+		if (now - lastkeyboardEventTime < 40) {
+			return;
+			
+		}
+		
+		
+		
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			snake.up();
 			} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -73,6 +98,8 @@ import javax.swing.JFrame;
 			}  else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 	            System.exit(0);
 	        }
+		
+		lastkeyboardEventTime = now;
 	}
 
 	

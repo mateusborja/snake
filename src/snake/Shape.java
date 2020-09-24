@@ -27,9 +27,6 @@ public class Shape extends Drawable {
 		return rects.get(rects.size() -1);
 	}
 	
-	
-	
-	
 	public void addRect(Rect rect) {
 		rects.add(rect);
 	}
