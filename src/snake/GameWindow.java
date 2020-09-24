@@ -8,13 +8,12 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 
-@SuppressWarnings("serial")
-public class GameWindow extends JFrame implements KeyListener { 
+	@SuppressWarnings("serial")
+	public class GameWindow extends JFrame implements KeyListener { 
 	private Renderer renderer;
 	private Snake snake;
 	private Image buffer;
 	private Graphics gImage;
-	
 	
 	
 	public GameWindow(Snake snake) {
@@ -37,6 +36,7 @@ public class GameWindow extends JFrame implements KeyListener {
 	public Renderer getRenderer() {
 		return renderer;
 	}
+	
 
 	@Override
 	public void paint(Graphics gScreen) {
@@ -50,7 +50,18 @@ public class GameWindow extends JFrame implements KeyListener {
 		
 	}
 	
-	public void KeyPressed(KeyEvent e) {
+	@Override
+	public void keyTyped(KeyEvent e) {
+	
+}
+	
+	@Override
+	public void keyReleased(KeyEvent e) {
+			
+	}
+		
+	@Override
+	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			snake.up();
 			} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -59,24 +70,11 @@ public class GameWindow extends JFrame implements KeyListener {
 				snake.left();
 			} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				snake.right();
-	
-	}
-}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-
+			}  else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+	            System.exit(0);
+	        }
 	}
 
-	@Override
-	public void keyPressed(KeyEvent e) {
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		
-	}
 	
 }
 
