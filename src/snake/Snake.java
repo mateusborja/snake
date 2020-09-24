@@ -72,5 +72,17 @@ public class Snake extends Shape {
 		}
 		
 		
+		public boolean collidesWithItself() {
+			Rect head = getFirstRect();
+			
+			for (int i =1; i < getRects().size(); i++) {
+				
+				if(head.intersects(getFirstRect().get(i))) {
+					return true;
+				}
+			}
+			
+		}
+		
 	
 }

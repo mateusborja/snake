@@ -56,4 +56,15 @@ public class Shape extends Drawable {
 			r.draw(g);
 		}
 	}
+	
+	public boolean intersects (Rect rect) {
+		for (Rect r : rects) {
+			if (r.intersects(rect)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
+

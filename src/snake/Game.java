@@ -29,9 +29,11 @@ public class Game implements Runnable {
 
           
         } while (!isGameOver());
+        
+        gameWindow.dispose();
     }
 
     private boolean isGameOver() {
-        return false;
+        return snake.collidesWithItself();
     }
 }

@@ -29,6 +29,9 @@ public class Rect extends Drawable {
 		return rectangle.getSize();
 	}
 	
+	public boolean intersects (Rect other) {
+		return rectangle.intersects(other.rectangle);
+	}
 
 	public void draw(Graphics g) {
 		g.fillRect(
