@@ -1,5 +1,6 @@
 package snake;
 
+import java.awt.Rectangle;
 
 public class Game implements Runnable {
     private GameWindow gameWindow;
@@ -36,6 +37,27 @@ public class Game implements Runnable {
         } while (!isGameOver());
         
         gameWindow.dispose();
+    }
+    
+    private boolean isSnakeHitBounds() {
+    	Rect head = snake.getFirstRect();
+    	Rectangle drawingArea = gameWindow.getDrawingArea();
+    	
+    	int headX = (int) head.getLocation().getX();
+    	int headY = (int) head.getLocation().getY();
+
+    	int areaX1 = (int) drawingArea.getMinX();
+    	int areaY1 = (int) drawingArea.getMinY() - Constants.SNAKE_PIECE_SIZE;
+    	
+    	int areaX2 = (int) drawingArea.getMaxX();
+    	int areaY2 = (int) drawingArea.getMaxY();
+    	
+    	if (headX <= areaX1 || headX)
+
+    	
+    	
+    	
+    	
     }
 
     private boolean isGameOver() {
