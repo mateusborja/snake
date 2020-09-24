@@ -43,27 +43,27 @@ public class Snake extends Shape {
 		public synchronized void left() {
 			if (direction.canChangeTo(Direction.LEFT)) {
 			direction = Direction.LEFT;
-		}
+			}
 		}
 			
 		public synchronized  void right() {
 			if (direction.canChangeTo(Direction.RIGHT)) {
 			direction = Direction.RIGHT;
-		}
+			}
 			
 		}
 		
 		public synchronized  void up() {
 			if (direction.canChangeTo(Direction.UP)) {
 			direction = Direction.UP;
-		}
+			}
 			
 		}
 		
 		public synchronized void down() {
 			if (direction.canChangeTo(Direction.DOWN)) {
 			direction = Direction.DOWN;
-		}
+			}
 			
 		}
 		

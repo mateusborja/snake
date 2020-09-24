@@ -3,42 +3,39 @@ package snake;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.Rectangle;
 
 
 public class Rect extends Drawable {
-	private Point location;
-	private Dimension dimension;
+	private Rectangle rectangle;
 
-	
 
 	public Rect(Point location, Dimension dimension) {
 		
-		this.location = location;
-		this.dimension = dimension;
+		this.rectangle = new Rectangle (location, dimension);
 		
 	}
 	
 	public Rect(int x, int y, int width, int height) {
-		this.location = new Point(x,y);
-		this.dimension = new Dimension(width, height);
+		this.rectangle = new Rectangle (x, y, width, height);
 	}
 
 	public Point getLocation() {
-		return location;
+		return rectangle.getLocation();
 				
 	}
 	
 	public Dimension getDimension() {
-		return dimension;
+		return rectangle.getSize();
 	}
 	
 
 	public void draw(Graphics g) {
 		g.fillRect(
-				(int) location.getX(),
-				(int) location.getY(),
-				(int) dimension.getWidth(),
-				(int) dimension.getHeight());
+				(int) rectangle.getLocation().getX(),
+				(int) rectangle.getLocation().getY(),
+				(int) rectangle.getSize().getWidth(),
+				(int) rectangle.getSize().getHeight());
 	}
 		
 

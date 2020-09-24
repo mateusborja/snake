@@ -8,12 +8,12 @@ public class Renderer {
 	private List<Drawable> drawables;
 	private Graphics gImage;
 	
-	public Renderer(Graoghics gImage) {
+	public Renderer(Graghics gImage) {
 		drawables = new ArrayList<>();
 		this.gImage = gImage;
 	}
 	
-	public void render(Graphics g) {
+	public synchronized void render(Graphics g) {
 		for (Drawable d : drawables) {
 			gImage.setColor(d.getColor());
 			d.draw(gImage);
