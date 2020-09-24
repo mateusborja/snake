@@ -17,7 +17,8 @@ import javax.swing.JFrame;
 	
 	public GameWindow(Snake snake) {
 		this.snake = snake;
-
+//		setUndecorated(true);
+		
 		setSize(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
 		setResizable(false);
 		setTitle(Constants.WINDOW_TITLE);
