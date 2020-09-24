@@ -23,13 +23,9 @@ public class Snake extends Shape {
 		}
 	}
 	
-	
 		public void move() {
 			if (direction != Direction.NONE) {
 				Rect head = getFirstRect();
-//				Rect tail = getLastRect();
-				
-
 				
 				GameUtils.moveRects(getRects());
 				
@@ -46,14 +42,14 @@ public class Snake extends Shape {
 			}
 		}
 			
-		public synchronized  void right() {
+		public synchronized void right() {
 			if (direction.canChangeTo(Direction.RIGHT)) {
 			direction = Direction.RIGHT;
 			}
 			
 		}
 		
-		public synchronized  void up() {
+		public synchronized void up() {
 			if (direction.canChangeTo(Direction.UP)) {
 			direction = Direction.UP;
 			}
@@ -64,25 +60,17 @@ public class Snake extends Shape {
 			if (direction.canChangeTo(Direction.DOWN)) {
 			direction = Direction.DOWN;
 			}
-			
 		}
-		
-		public void escape() {
-			
-		}
-		
 		
 		public boolean collidesWithItself() {
 			Rect head = getFirstRect();
 			
-			for (int i =1; i < getRects().size(); i++) {
-				
-				if(head.intersects(getFirstRect().get(i))) {
+			for (int i = 1; i < getRects().size(); i++) {
+				if (head.intersects(getRects().get(i))) {
 					return true;
 				}
 			}
 			
+			return false;
 		}
-		
-	
 }

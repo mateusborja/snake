@@ -34,7 +34,7 @@ public class Shape extends Drawable {
 		rects.add(rect);
 	}
 	
-	public Rect duplicateRect(Rect baseRect) {
+	public Rect duplicateRect(Rect baseRect, Direction direction) {
 		int baseX = (int) baseRect.getLocation().getX();
 		int baseY = (int) baseRect.getLocation().getY();
 		int baseWidth = (int) baseRect.getDimension().getWidth();
@@ -44,8 +44,7 @@ public class Shape extends Drawable {
 				baseX  + direction.getSgnX() * baseWidth,
 				baseY  + direction.getSgnY() * baseHeight);
 		
-		Dimension dimension = new Dimension(baseWidth, baseHeight);
-		Rect newRect = new Rect(location, dimension);
+		Rect newRect = new Rect(location, baseRect.getDimension());
 		return newRect;
 	}
 	

@@ -1,5 +1,6 @@
 package snake;
 
+
 public class Game implements Runnable {
     private GameWindow gameWindow;
     private Renderer renderer;

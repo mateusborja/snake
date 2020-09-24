@@ -11,7 +11,6 @@ public class Rect extends Drawable {
 
 
 	public Rect(Point location, Dimension dimension) {
-		
 		this.rectangle = new Rectangle (location, dimension);
 		
 	}
@@ -41,5 +40,4 @@ public class Rect extends Drawable {
 				(int) rectangle.getSize().getHeight());
 	}
 		
-
 }
