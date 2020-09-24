@@ -39,6 +39,7 @@ public class Game implements Runnable {
         gameWindow.dispose();
     }
     
+    // deteccao de colisao    	
     private boolean isSnakeHitBounds() {
     	Rect head = snake.getFirstRect();
     	Rectangle drawingArea = gameWindow.getDrawingArea();
@@ -52,11 +53,15 @@ public class Game implements Runnable {
     	int areaX2 = (int) drawingArea.getMaxX();
     	int areaY2 = (int) drawingArea.getMaxY();
     	
-    	if (headX <= areaX1 || headX)
-
+    	if (headX <= areaX1 || headX + Constants.SNAKE_PIECE_SIZE >= areaX2) {
+    		return true;
+    	}
     	
+    	if (headY <= areaY1 || headY + Constants.SNAKE_PIECE_SIZE >= areaY2) {
+    		return true;
+    	}
     	
-    	
+    	return false;
     	
     }
 
