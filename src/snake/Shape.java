@@ -19,6 +19,17 @@ public class Shape extends Drawable {
 		return rects;
 	}
 	
+	public Rect getFirstRect() {
+		return rects.get(0);
+	}
+	
+	public Rect getLastRect() {
+		return rects.get(rects.size() -1);
+	}
+	
+	
+	
+	
 	public void addRect(Rect rect) {
 		rects.add(rect);
 	}
@@ -29,7 +40,10 @@ public class Shape extends Drawable {
 		int baseWidth = (int) baseRect.getDimension().getWidth();
 		int baseHeight = (int) baseRect.getDimension().getHeight();
 		
-		Point location = new Point(baseX - baseWidth, baseY);
+		Point location = new Point(
+				baseX  + direction.getSgnX() * baseWidth,
+				baseY  + direction.getSgnY() * baseHeight);
+		
 		Dimension dimension = new Dimension(baseWidth, baseHeight);
 		Rect newRect = new Rect(location, dimension);
 		return newRect;
@@ -37,7 +51,7 @@ public class Shape extends Drawable {
 	
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(getColor());
+
 		for (Rect r : rects) {
 			r.draw(g);
 		}
