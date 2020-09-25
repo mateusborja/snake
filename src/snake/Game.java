@@ -37,7 +37,7 @@ public class Game implements Runnable {
           
         } while (!isGameOver());
         
-        processGameOver();
+        processGameOver();    
         
     }
     
@@ -52,6 +52,7 @@ public class Game implements Runnable {
     	gameWindow.repaint();
     }
     
+     
     private boolean isSnakeHitBounds() {
     	Rect head = snake.getFirstRect();
     	Rectangle drawingArea = gameWindow.getDrawingArea();
