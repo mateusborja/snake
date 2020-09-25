@@ -11,9 +11,9 @@ public class Game implements Runnable {
     
     public void start() {
         snake = new Snake();
-        food = new Food();
         gameWindow = new GameWindow(snake);
         renderer = gameWindow.getRenderer();
+        food = new Food(gameWindow.getDrawingArea());
 
         addElementsToScreen();
         new Thread(this).start();
@@ -31,6 +31,7 @@ public class Game implements Runnable {
         do {
             gameWindow.repaint();
             snake.move();
+            food.checkIfEaten(snake, gameWindow.getDrawingArea());
             GameUtils.sleep(30);
 
           
@@ -39,7 +40,19 @@ public class Game implements Runnable {
         gameWindow.dispose();
     }
     
-    // deteccao de colisao    	
+    private boolean isGameOver() {
+    	return snake.collidesWithItself() || is SnakeHitBounds();
+    }
+    
+    private void processGameOver() {
+    	renderer.remove(snake);
+    	renderer.remove(food);
+    	renderer.add(new GameOverText());
+    	gameWindow.repaint();
+    }
+    
+    
+    // colisao de retangulos    	
     private boolean isSnakeHitBounds() {
     	Rect head = snake.getFirstRect();
     	Rectangle drawingArea = gameWindow.getDrawingArea();
@@ -56,6 +69,7 @@ public class Game implements Runnable {
     	if (headX <= areaX1 || headX + Constants.SNAKE_PIECE_SIZE >= areaX2) {
     		return true;
     	}
+    	
     	
     	if (headY <= areaY1 || headY + Constants.SNAKE_PIECE_SIZE >= areaY2) {
     		return true;

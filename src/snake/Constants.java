@@ -17,9 +17,15 @@ public class Constants {
 	
 	public static final int SNAKE_INITIAL_SIZE = 20;
 	public static final int SNAKE_SIZE_1 = 30;
+	
+	public static final int FOOD_SIZE = 5;
+	
 
-	public static final Color FOOD_COLOR = Color.GREEN;
-	public static final int FOOD_SIZE = 10;
+	public static final String GAME_OVER_TEXT = "GAME OVER!!! %d PONTOS(S)";
+	public static final Color GAME_OVER_COLOR = Color.RED;
+	public static final Point GAME_OVER_LOCATION = new Point(WINDOW_WIDTH / 2 - 90, WINDOW_HEIGHT / 2);
+			
+	
 	
 	public static final int FOOD_START_X = 250;
 	public static final int FOOD_START_Y = 250;
