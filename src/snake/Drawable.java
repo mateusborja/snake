@@ -10,6 +10,11 @@ public abstract class Drawable {
 		color = Color.BLACK;
 	}
 	
+	public Drawable(Color color) {
+		this.color = color;
+	}
+	
+	
 	public Color getColor() {
 		return color;
 	}

@@ -8,11 +8,10 @@ import java.awt.Rectangle;
 public class Food extends Rect {
 	private int eatenTimes;
 	
-	public Food(Rectangle drawingArea) {
+	public Food(Snake snake, Rectangle drawingArea) {
 		
 		setColor(Color.GREEN);
 		setDimension(new Dimension(Constants.FOOD_SIZE, Constants.FOOD_SIZE));
-		
 		setRandomLocation(snake, drawingArea);
 		
 	}
@@ -21,7 +20,6 @@ public class Food extends Rect {
 		int offset = 3;
 		
 		do {
-			
 			int minX = (int) drawingArea.getMinX() + offset;
 			int minY = (int) drawingArea.getMinY() + offset;
 			
@@ -37,13 +35,15 @@ public class Food extends Rect {
 		
 	}
 	
-	
 	public void checkIfEaten(Snake snake, Rectangle drawingArea) {
 		if (snake.intersects(this)) {
 			eatenTimes++;
 			setRandomLocation(snake, drawingArea);
 			snake.elongate();
-			
 		}
+	}
+	
+	public int getEatenTimes() {
+		return eatenTimes;
 	}
 }

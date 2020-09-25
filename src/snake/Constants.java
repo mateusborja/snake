@@ -1,6 +1,7 @@
 package snake;
 
 import java.awt.Color;
+import java.awt.Point;
 
 public class Constants {
 	
@@ -20,13 +21,10 @@ public class Constants {
 	
 	public static final int FOOD_SIZE = 5;
 	
-
-	public static final String GAME_OVER_TEXT = "GAME OVER!!! %d PONTOS(S)";
+	public static final String GAME_OVER_TEXT = "GAME OVER! %d PONTO(S)";
 	public static final Color GAME_OVER_COLOR = Color.RED;
-	public static final Point GAME_OVER_LOCATION = new Point(WINDOW_WIDTH / 2 - 90, WINDOW_HEIGHT / 2);
+	public static final Point GAME_OVER_LOCATION = new Point(WINDOW_WIDTH / 2 - 100, WINDOW_HEIGHT / 2);
 			
+	public static final int SLEEP_TIME = 30;
 	
-	
-	public static final int FOOD_START_X = 250;
-	public static final int FOOD_START_Y = 250;
 }

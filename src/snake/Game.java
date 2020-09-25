@@ -13,7 +13,7 @@ public class Game implements Runnable {
         snake = new Snake();
         gameWindow = new GameWindow(snake);
         renderer = gameWindow.getRenderer();
-        food = new Food(gameWindow.getDrawingArea());
+        food = new Food(snake, gameWindow.getDrawingArea());
 
         addElementsToScreen();
         new Thread(this).start();
@@ -32,27 +32,26 @@ public class Game implements Runnable {
             gameWindow.repaint();
             snake.move();
             food.checkIfEaten(snake, gameWindow.getDrawingArea());
-            GameUtils.sleep(30);
+            GameUtils.sleep(Constants.SLEEP_TIME);
 
           
         } while (!isGameOver());
         
-        gameWindow.dispose();
+        processGameOver();
+        
     }
     
     private boolean isGameOver() {
-    	return snake.collidesWithItself() || is SnakeHitBounds();
+    	return snake.collidesWithItself() || isSnakeHitBounds();
     }
     
     private void processGameOver() {
     	renderer.remove(snake);
     	renderer.remove(food);
-    	renderer.add(new GameOverText());
+    	renderer.add(new GameOverText(food.getEatenTimes()));
     	gameWindow.repaint();
     }
     
-    
-    // colisao de retangulos    	
     private boolean isSnakeHitBounds() {
     	Rect head = snake.getFirstRect();
     	Rectangle drawingArea = gameWindow.getDrawingArea();
@@ -70,16 +69,11 @@ public class Game implements Runnable {
     		return true;
     	}
     	
-    	
     	if (headY <= areaY1 || headY + Constants.SNAKE_PIECE_SIZE >= areaY2) {
     		return true;
     	}
     	
     	return false;
-    	
     }
 
-    private boolean isGameOver() {
-        return snake.collidesWithItself();
-    }
 }
