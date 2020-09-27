@@ -24,6 +24,8 @@ public class Constants {
 	public static final String GAME_OVER_TEXT = "GAME OVER! %d PONTO(S)";
 	public static final Color GAME_OVER_COLOR = Color.RED;
 	public static final Point GAME_OVER_LOCATION = new Point(WINDOW_WIDTH / 2 - 100, WINDOW_HEIGHT / 2);
+
+	public static final Strind SCORE_TITLE = "%d PONTO(S)";
 			
 	public static final int SLEEP_TIME = 30;
 	
