@@ -4,8 +4,6 @@ import static snake.Constants.GAME_OVER_COLOR;
 import static snake.Constants.GAME_OVER_LOCATION;
 import static snake.Constants.GAME_OVER_TEXT;
 
-import java.awt.Color;
-import java.awt.Point;
 
 public class GameOverText extends Text{
 
