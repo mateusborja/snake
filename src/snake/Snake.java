@@ -62,10 +62,7 @@ public class Snake extends Shape {
 			}
 		}
 		
-		public void elongate() {
-			
-		}
-		
+
 		public boolean collidesWithItself() {
 			Rect head = getFirstRect();
 			
