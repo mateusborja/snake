@@ -44,6 +44,10 @@ public class Rect extends Drawable {
 	public boolean intersects (Rect other) {
 		return rectangle.intersects(other.rectangle);
 	}
+	
+	public void elongate() {
+		
+	}
 
 	public void draw(Graphics g) {
 		g.fillRect(
